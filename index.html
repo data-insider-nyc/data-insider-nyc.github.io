@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>data insider</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      color-scheme: light;
+      --bg-top: #f6fbff;
+      --bg-bottom: #eef3ff;
+      --ink: #0b1324;
+      --muted: #334155;
+      --accent: #1d4ed8;
+    }
+
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+    }
+
+    body {
+      display: grid;
+      place-items: center;
+      font-family: "Geist", "Segoe UI", sans-serif;
+      text-align: center;
+      overflow: hidden;
+      background:
+        radial-gradient(1200px 600px at 15% 10%, rgba(29, 78, 216, 0.14), transparent 58%),
+        radial-gradient(900px 500px at 85% 82%, rgba(14, 116, 144, 0.14), transparent 62%),
+        linear-gradient(180deg, var(--bg-top), var(--bg-bottom));
+      color: var(--ink);
+      letter-spacing: -0.02em;
+    }
+
+    main {
+      position: relative;
+      z-index: 1;
+      padding: 2rem 1.25rem;
+      max-width: 62rem;
+      animation: reveal 700ms ease-out both;
+    }
+
+    h1 {
+      margin: 0 0 0.75rem;
+      font-size: clamp(3.2rem, 11vw, 8.8rem);
+      font-weight: 600;
+      line-height: 1.1;
+      text-wrap: balance;
+      background: linear-gradient(95deg, #0f172a 0%, #1e3a8a 48%, #0f766e 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      filter: drop-shadow(0 20px 35px rgba(15, 23, 42, 0.13));
+    }
+
+    p {
+      margin: 0;
+      font-size: clamp(1.15rem, 3.1vw, 2rem);
+      font-weight: 500;
+      color: var(--muted);
+      text-wrap: balance;
+      max-width: 42ch;
+      margin-inline: auto;
+    }
+
+    body::before,
+    body::after {
+      content: "";
+      position: fixed;
+      width: 22rem;
+      height: 22rem;
+      border-radius: 999px;
+      opacity: 0.44;
+      filter: blur(26px);
+      z-index: 0;
+      animation: drift 11s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    body::before {
+      top: -6rem;
+      left: -5rem;
+      background: #93c5fd;
+    }
+
+    body::after {
+      right: -4.5rem;
+      bottom: -7rem;
+      background: #67e8f9;
+      animation-delay: -4s;
+    }
+
+    @keyframes reveal {
+      from {
+        transform: translateY(16px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes drift {
+      0%,
+      100% {
+        transform: translateY(0) scale(1);
+      }
+      50% {
+        transform: translateY(18px) scale(1.06);
+      }
+    }
+
+    @media (max-width: 640px) {
+      main {
+        padding: 1.25rem;
+      }
+
+      p {
+        max-width: 30ch;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>data insider</h1>
+    <p>We build data-driven products and tools.</p>
+  </main>
+</body>
+</html>
